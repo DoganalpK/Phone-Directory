@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace Contact.Microservice.Models.DbContexts
 {
@@ -13,6 +14,8 @@ namespace Contact.Microservice.Models.DbContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            var assmb = Assembly.GetExecutingAssembly();
+            modelBuilder.ApplyConfigurationsFromAssembly(assmb);
             base.OnModelCreating(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
