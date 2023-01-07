@@ -9,5 +9,6 @@ namespace Contact.Microservice.Repository
         Task<T> CreateAsync(T entity);
         Task<T> UpdateAsync(T entity, T unchanged);
         Task<Guid> DeleteAsync(T entity);
+        Task<IQueryable<T>> GetQuery();
     }
 }

@@ -1,4 +1,5 @@
-﻿using Contact.Microservice.Features.CQRS.Queries;
+﻿using Contact.Microservice.Features.CQRS.Commands;
+using Contact.Microservice.Features.CQRS.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,13 @@ namespace Contact.Microservice.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(_mediator.Send(new GetAllKisilerQueryRequest()));
+            return Ok(await _mediator.Send(new GetAllKisilerQueryRequest()));
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(RemoveKisilerIletisimBilgileriCommandRequest model)
+        {
+            return Ok(await _mediator.Send(model));
         }
     }
 }

@@ -39,6 +39,10 @@ namespace Contact.Microservice.Repository
             await _context.SaveChangesAsync();
             return entity.UUID;
         }
-        
+
+        public async Task<IQueryable<T>> GetQuery()
+        {
+           return _context.Set<T>().AsQueryable();
+        }
     }
 }
