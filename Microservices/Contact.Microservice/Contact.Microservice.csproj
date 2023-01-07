@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.12">
       <PrivateAssets>all</PrivateAssets>
@@ -22,6 +23,8 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Features\CQRS\Commands\" />
+    <Folder Include="Features\CQRS\Queries\" />
   </ItemGroup>
 
 </Project>
