@@ -6,7 +6,7 @@ using MediatR;
 
 namespace Contact.Microservice.Features.CQRS.Queries
 {
-    public class GetAllKisilerQueryHandler : IRequestHandler<GetAllKisilerQueryRequest, List<Contact.Microservice.Models.Dtos.KisilerListDto>>
+    public class GetAllKisilerQueryHandler : IRequestHandler<GetAllKisilerQueryRequest, List<KisilerListDto>>
     {
         private readonly IGenericRepository<Kisiler> _repository;
         private readonly IMapper _mapper;
