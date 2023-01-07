@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Contact.Microservice.Features.CQRS.Commands
 {
-    public class CreateIletisimBilgileriCommandRequest : IRequest<KisilerIletisimBilgileriListDto>
+    public class CreateIletisimBilgileriCommandRequest : IRequest<IletisimBilgileriListDto>
     {
         public string BilgiIcerigi { get; set; }
         public string TelefonNumarasi { get; set; }

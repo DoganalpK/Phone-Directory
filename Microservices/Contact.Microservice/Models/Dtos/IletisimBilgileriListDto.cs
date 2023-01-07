@@ -1,6 +1,6 @@
 ﻿namespace Contact.Microservice.Models.Dtos
 {
-    public class KisilerIletisimBilgileriListDto
+    public class IletisimBilgileriListDto
     {
         public Guid UUID { get; set; }
         public string BilgiIcerigi { get; set; }

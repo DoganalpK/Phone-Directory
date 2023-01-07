@@ -1,6 +1,6 @@
 ﻿namespace Contact.Microservice.Models.Dtos
 {
-    public class KisilerIletisimBilgileriCreateDto
+    public class IletisimBilgileriCreateDto
     {
         public string BilgiIcerigi { get; set; }
         public string TelefonNumarasi { get; set; }
