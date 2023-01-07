@@ -2,9 +2,10 @@
 {
     public class KisilerIletisimBilgileriCreateDto
     {
-        public string? BilgiIcerigi { get; set; }
-        public string? TelefonNumarasi { get; set; }
-        public string? EmailAdresi { get; set; }
-        public string? Konum { get; set; }
+        public string BilgiIcerigi { get; set; }
+        public string TelefonNumarasi { get; set; }
+        public string EmailAdresi { get; set; }
+        public string Konum { get; set; }
+        public Guid KisilerUUID { get; set; }
     }
 }
