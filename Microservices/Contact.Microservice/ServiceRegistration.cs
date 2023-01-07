@@ -1,4 +1,5 @@
 ﻿using Contact.Microservice.Models.DbContexts;
+using Contact.Microservice.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace Contact.Microservice
@@ -11,6 +12,8 @@ namespace Contact.Microservice
             {
                 opt.UseNpgsql(configuration.GetConnectionString("PostgresDb"));
             });
+
+            services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
         }
     }
 }
