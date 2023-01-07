@@ -29,12 +29,14 @@ namespace Contact.Microservice.Repository
         public async Task<T> UpdateAsync(T entity,T unchanged)
         {
             _context.Entry(unchanged).CurrentValues.SetValues(entity);
+            await _context.SaveChangesAsync();
             return entity;
         }
 
         public async Task<Guid> DeleteAsync(T entity)
         {
             _context.Set<T>().Remove(entity);
+            await _context.SaveChangesAsync();
             return entity.UUID;
         }
         
