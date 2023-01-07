@@ -24,7 +24,7 @@ namespace Contact.Microservice.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> Delete(RemoveKisilerIletisimBilgileriCommandRequest model)
+        public async Task<IActionResult> Delete(RemoveIletisimBilgileriCommandRequest model)
         {
             return Ok(await _mediator.Send(model));
         }

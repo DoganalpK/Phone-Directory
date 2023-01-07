@@ -6,18 +6,18 @@ using MediatR;
 
 namespace Contact.Microservice.Features.CQRS.Commands
 {
-    public class CreateKisilerIletisimBilgileriCommandHandler : IRequestHandler<CreateKisilerIletisimBilgileriCommandRequest, KisilerIletisimBilgileriListDto>
+    public class CreateIletisimBilgileriCommandHandler : IRequestHandler<CreateIletisimBilgileriCommandRequest, KisilerIletisimBilgileriListDto>
     {
         private readonly IGenericRepository<IletisimBilgileri> _repository;
         private readonly IMapper _mapper;
 
-        public CreateKisilerIletisimBilgileriCommandHandler(IGenericRepository<IletisimBilgileri> repository, IMapper mapper)
+        public CreateIletisimBilgileriCommandHandler(IGenericRepository<IletisimBilgileri> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<KisilerIletisimBilgileriListDto> Handle(CreateKisilerIletisimBilgileriCommandRequest request, CancellationToken cancellationToken)
+        public async Task<KisilerIletisimBilgileriListDto> Handle(CreateIletisimBilgileriCommandRequest request, CancellationToken cancellationToken)
         {
             var dto = _mapper.Map<IletisimBilgileri>(request);
             var iletisimBilgileri = await _repository.CreateAsync(dto);
