@@ -31,7 +31,7 @@ namespace Contact.Microservice.Controllers
             return Ok(await _mediator.Send(model));
         }
 
-        [HttpDelete("{UUID}")]
+        [HttpDelete]
         public async Task<IActionResult> Remove([FromBody]RemoveKisilerCommandRequest model)
         {
             return Ok(await _mediator.Send(model));
