@@ -22,7 +22,7 @@ namespace Contact.Microservice.Controllers
             Uri uri = new Uri("rabbitmq://localhost/reportsQueue");
             var endPoint = await _busService.GetSendEndpoint(uri);
             await endPoint.Send(model);
-            return Ok();
+            return Ok(model.UUID);
         }
     }
 }

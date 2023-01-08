@@ -38,6 +38,7 @@ namespace Contact.Microservice
                     });
                 }));
             });
+            services.AddMassTransitHostedService();
 
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             services.AddAutoMapper(assmb);

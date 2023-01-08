@@ -26,6 +26,7 @@ namespace Report.Microservice
                 }));
             });
             services.AddMassTransitHostedService();
+            services.AddHttpClient();
         }
     }
 }
