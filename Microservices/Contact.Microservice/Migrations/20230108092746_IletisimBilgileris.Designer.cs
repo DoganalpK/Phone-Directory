@@ -3,6 +3,7 @@ using System;
 using Contact.Microservice.Models.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Contact.Microservice.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230108092746_IletisimBilgileris")]
+    partial class IletisimBilgileris
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,7 +77,7 @@ namespace Contact.Microservice.Migrations
             modelBuilder.Entity("Contact.Microservice.Models.Domain.IletisimBilgileri", b =>
                 {
                     b.HasOne("Contact.Microservice.Models.Domain.Kisiler", "Kisiler")
-                        .WithMany("IletisimBilgileris")
+                        .WithMany("IletisimBilgileri")
                         .HasForeignKey("KisilerUUID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -85,7 +87,7 @@ namespace Contact.Microservice.Migrations
 
             modelBuilder.Entity("Contact.Microservice.Models.Domain.Kisiler", b =>
                 {
-                    b.Navigation("IletisimBilgileris");
+                    b.Navigation("IletisimBilgileri");
                 });
 #pragma warning restore 612, 618
         }

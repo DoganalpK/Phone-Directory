@@ -10,7 +10,7 @@ namespace Contact.Microservice.Models.DbContexts
         }
 
         public DbSet<Domain.Kisiler> Kisiler { get; set; }
-        public DbSet<Domain.IletisimBilgileri> IletisimBilgileri { get; set; }
+        public DbSet<Domain.IletisimBilgileri> IletisimBilgileris { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
