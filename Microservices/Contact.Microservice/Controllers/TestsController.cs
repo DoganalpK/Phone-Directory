@@ -18,9 +18,9 @@ namespace Contact.Microservice.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery]GetKisilerIletisimBilgileriByIdQueryRequest model)
         {
-            return Ok(await _mediator.Send(new GetAllKisilerQueryRequest()));
+            return Ok(await _mediator.Send(model));
         }
 
         [HttpDelete]
