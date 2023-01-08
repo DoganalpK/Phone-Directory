@@ -11,6 +11,7 @@ namespace Contact.Microservice.Models.DbContexts
 
         public DbSet<Domain.Kisiler> Kisiler { get; set; }
         public DbSet<Domain.IletisimBilgileri> IletisimBilgileris { get; set; }
+        public DbSet<Domain.Rapor> Rapors { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
