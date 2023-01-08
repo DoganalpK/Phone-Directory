@@ -13,6 +13,10 @@ namespace Contact.Microservice
         {
             var assmb = Assembly.GetExecutingAssembly();
 
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddAutoMapper(assmb);
+            services.AddMediatR(assmb);
+
             services.AddDbContext<AppDbContext>(opt =>
             {
                 opt.UseNpgsql(configuration.GetConnectionString("PostgresDb"));
@@ -38,11 +42,7 @@ namespace Contact.Microservice
                     });
                 }));
             });
-            services.AddMassTransitHostedService();
-
-            services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
-            services.AddAutoMapper(assmb);
-            services.AddMediatR(assmb);
+            services.AddMassTransitHostedService();            
         }
     }
 }
