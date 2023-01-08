@@ -17,6 +17,14 @@ namespace Contact.Microservice
                 opt.UseNpgsql(configuration.GetConnectionString("PostgresDb"));
             });
 
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("GlobalCORS", config =>
+                {
+                    config.AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+
             services.AddScoped(typeof(IGenericRepository<>),typeof(GenericRepository<>));
             services.AddAutoMapper(assmb);
             services.AddMediatR(assmb);
