@@ -17,6 +17,9 @@ namespace Report.Microservice.Consumers
         public async Task Consume(ConsumeContext<Rapor> context)
         {
             var obj = context.Message;
+            //var client = _clientFactory.CreateClient();
+            //var response = await client.GetAsync("https://localhost:7088/api/Kisi");
+            //var jsonData = await response.Content.ReadAsStringAsync();
         }
     }
 }
