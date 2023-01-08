@@ -19,6 +19,12 @@ namespace Contact.Microservice.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet("{UUID}")]
+        public async Task<IActionResult> GetByIdWithIletisimBilgileri(GetKisilerIletisimBilgileriByIdQueryRequest model)
+        {
+            return Ok(await _mediator.Send(model));
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
