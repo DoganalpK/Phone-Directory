@@ -6,6 +6,6 @@
         public string Ad { get; set; }
         public string Soyad { get; set; }
         public string Firma { get; set; }
-        public List<IletisimBilgileriListDto>? IletisimBilgileri { get; set; }
+        public List<IletisimBilgileriListDto>? IletisimBilgileris { get; set; }
     }
 }

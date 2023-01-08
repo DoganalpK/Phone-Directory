@@ -10,7 +10,7 @@ namespace Contact.Microservice.Configurations
         {
             builder.HasKey(x => x.UUID);
             builder.Property(x=> x.UUID).IsRequired();
-            builder.HasOne(x => x.Kisiler).WithMany(x => x.IletisimBilgileri).HasForeignKey(x => x.KisilerUUID);
+            builder.HasOne(x => x.Kisiler).WithMany(x => x.IletisimBilgileris).HasForeignKey(x => x.KisilerUUID);
         }
     }
 }

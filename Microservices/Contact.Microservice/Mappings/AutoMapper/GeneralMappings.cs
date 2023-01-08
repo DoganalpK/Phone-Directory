@@ -12,6 +12,8 @@ namespace Contact.Microservice.Mappings.AutoMapper
             CreateMap<Kisiler, KisilerCreateDto>().ReverseMap();
             CreateMap<Kisiler, KisilerListDto>().ReverseMap();
             CreateMap<Kisiler, CreateKisilerCommandRequest>().ReverseMap();
+            CreateMap<List<Kisiler>, KisilerIletisimBilgileriListDto>().ReverseMap();
+            CreateMap<Kisiler, KisilerIletisimBilgileriListDto>().ReverseMap();
             CreateMap<IletisimBilgileri, IletisimBilgileriCreateDto>().ReverseMap();
             CreateMap<IletisimBilgileri, IletisimBilgileriListDto>().ReverseMap();
             CreateMap<IletisimBilgileri, CreateIletisimBilgileriCommandRequest>().ReverseMap();
